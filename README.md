@@ -125,7 +125,7 @@ $ pod install
 
     @IBAction func btnStartChatAction(_ sender:UIButton){
         let sdkCongig = DrdshChatSDKConfiguration()
-        sdkCongig.appSid = "5def86cf64be6d13f55f2034.5d96941bb5507599887b9c71829d5cffcdf55014"
+        sdkCongig.appSid = "put your appSid here"
         DrdshChatSDK.presentChat(config: sdkCongig)
     }
 ```
