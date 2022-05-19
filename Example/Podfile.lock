@@ -1,8 +1,8 @@
 PODS:
-  - DrdshChatSDKTest (1.1.8):
+  - DrdshChatSDK (1.0.0):
     - IQKeyboardManagerSwift (= 6.2.1)
     - MBProgressHUD
-    - Socket.IO-Client-Swift
+    - Socket.IO-Client-Swift (= 15.2.0)
     - SwiftyJSON (~> 4.0)
   - Firebase/CoreOnly (6.34.0):
     - FirebaseCore (= 6.10.4)
@@ -76,7 +76,7 @@ PODS:
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
-  - DrdshChatSDKTest (from `../`)
+  - DrdshChatSDK (from `../`)
   - Firebase/Messaging
   - FirebaseCrashlytics
   - IQKeyboardManagerSwift (= 6.2.1)
@@ -105,11 +105,11 @@ SPEC REPOS:
     - SwiftyJSON
 
 EXTERNAL SOURCES:
-  DrdshChatSDKTest:
+  DrdshChatSDK:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DrdshChatSDKTest: c57497f526172eb132fe53a39bef145c50a45f9f
+  DrdshChatSDK: 4a8c06ac27639cf1ac883a46f538e4072f63f21a
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
@@ -128,6 +128,6 @@ SPEC CHECKSUMS:
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 7d85b75a87f22c92660c00e59eb5da22540fa8e6
+PODFILE CHECKSUM: 958ee054a8273e74335cb5a1c1d9d9dd38cd26d2
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.3

@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## DrdshChatSDKTest
+## DrdshChatSDK
 
 Copyright (c) 2020 gauravgudaliya <cto@htf.sa>
 

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double DrdshChatSDKTestVersionNumber;
-FOUNDATION_EXPORT const unsigned char DrdshChatSDKTestVersionString[];
+FOUNDATION_EXPORT double DrdshChatSDKVersionNumber;
+FOUNDATION_EXPORT const unsigned char DrdshChatSDKVersionString[];
 
