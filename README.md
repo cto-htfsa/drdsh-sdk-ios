@@ -7,7 +7,6 @@
 
 
 ## Screenshots
-https://www.drdsh.live/sdk/close-chat.png
 <p align="center">
 <a href="https://www.drdsh.live/sdk/Offline.png">
 <img src="https://www.drdsh.live/sdk/Offline.png" height="480">

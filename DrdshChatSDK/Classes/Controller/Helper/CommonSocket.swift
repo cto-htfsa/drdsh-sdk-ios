@@ -103,9 +103,9 @@ class CommonSocket: NSObject {
     {
         var t:[String:Any] = [:]
         t = data[0] as? [String:Any] ?? [:]
-        t["appSid"] = DrdshChatSDKTest.shared.config.appSid
+        t["appSid"] = DrdshChatSDK.shared.config.appSid
         t["device"] = "ios"
-        t["locale"] = DrdshChatSDKTest.shared.config.local
+        t["locale"] = DrdshChatSDK.shared.config.local
         debugPrint("command",command.relative)
         if isConnected()
         {

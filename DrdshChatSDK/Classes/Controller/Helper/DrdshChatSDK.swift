@@ -1,15 +1,15 @@
 //
-//  DrdshChatSDKTest.swift
-//  DrdshChatSDKTest
+//  DrdshChatSDK.swift
+//  DrdshChatSDK
 //
 //  Created by Gaurav Gudaliya R on 14/03/20.
 //
 
 import Foundation
 
-public class DrdshChatSDKTest : NSObject {
-    @objc public static let shared: DrdshChatSDKTest = {
-        return DrdshChatSDKTest()
+public class DrdshChatSDK : NSObject {
+    @objc public static let shared: DrdshChatSDK = {
+        return DrdshChatSDK()
     }()
     var baseURL = "https://www.drdsh.live"
     var APIbaseURL = "https://www.drdsh.live"+"/sdk/v1/"
@@ -18,11 +18,11 @@ public class DrdshChatSDKTest : NSObject {
     var AgentDetail:AgentModel = AgentModel()
     var config = DrdshChatSDKConfiguration()
     func DrdshChatSDKBundlePath() -> String {
-        return Bundle(for: DrdshChatSDKTest.self).path(forResource: "DrdshChatSDKTest", ofType: "bundle")!
+        return Bundle(for: DrdshChatSDK.self).path(forResource: "DrdshChatSDK", ofType: "bundle")!
     }
     func DrdshChatSDKForcedBundlePath() -> String {
         let path = DrdshChatSDKBundlePath()
-        let name = DrdshChatSDKTest.shared.config.local
+        let name = DrdshChatSDK.shared.config.local
         return Bundle(path: path)!.path(forResource: name, ofType: "lproj")!
     }
     func localizedString(stringKey: String) -> String {
@@ -34,39 +34,38 @@ public class DrdshChatSDKTest : NSObject {
     
     @objc public class func presentChat(config: DrdshChatSDKConfiguration,animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
         if let data = UserDefaults.standard.object(forKey: "AllDetails") as? [String :AnyObject]{
-            DrdshChatSDKTest.shared.AllDetails <= data
+            DrdshChatSDK.shared.AllDetails <= data
         }
-        DrdshChatSDKTest.shared.config = config
-        if DrdshChatSDKTest.shared.config.appSid == ""{
-            let alert = UIAlertController(title: DrdshChatSDKTest.shared.localizedString(stringKey:"Error"), message: DrdshChatSDKTest.shared.localizedString(stringKey:"appSid can not be blank"), preferredStyle: UIAlertController.Style.alert)
-          alert.addAction(UIAlertAction(title: DrdshChatSDKTest.shared.localizedString(stringKey:"Ok"), style: UIAlertAction.Style.default, handler: nil))
-          DrdshChatSDKTest.shared.topViewController()?.present(alert, animated: true, completion: {
+        DrdshChatSDK.shared.config = config
+        if DrdshChatSDK.shared.config.appSid == ""{
+            let alert = UIAlertController(title: DrdshChatSDK.shared.localizedString(stringKey:"Error"), message: DrdshChatSDK.shared.localizedString(stringKey:"appSid can not be blank"), preferredStyle: UIAlertController.Style.alert)
+          alert.addAction(UIAlertAction(title: DrdshChatSDK.shared.localizedString(stringKey:"Ok"), style: UIAlertAction.Style.default, handler: nil))
+          DrdshChatSDK.shared.topViewController()?.present(alert, animated: true, completion: {
              
           })
         }
-//        else if DrdshChatSDKTest.shared.config.FCM_Token == ""{
-//            let alert = UIAlertController(title: DrdshChatSDKTest.shared.localizedString(stringKey:"Error"), message: DrdshChatSDKTest.shared.localizedString(stringKey:"FCM Token can not be blank"), preferredStyle: UIAlertController.Style.alert)
-//          alert.addAction(UIAlertAction(title: DrdshChatSDKTest.shared.localizedString(stringKey:"Ok"), style: UIAlertAction.Style.default, handler: nil))
-//          DrdshChatSDKTest.shared.topViewController()?.present(alert, animated: true, completion: {
+//        else if DrdshChatSDK.shared.config.FCM_Token == ""{
+//            let alert = UIAlertController(title: DrdshChatSDK.shared.localizedString(stringKey:"Error"), message: DrdshChatSDK.shared.localizedString(stringKey:"FCM Token can not be blank"), preferredStyle: UIAlertController.Style.alert)
+//          alert.addAction(UIAlertAction(title: DrdshChatSDK.shared.localizedString(stringKey:"Ok"), style: UIAlertAction.Style.default, handler: nil))
+//          DrdshChatSDK.shared.topViewController()?.present(alert, animated: true, completion: {
 //             
 //          })
-//        }else if DrdshChatSDKTest.shared.config.FCM_Auth_Key == ""{
-//            let alert = UIAlertController(title: DrdshChatSDKTest.shared.localizedString(stringKey:"Error"), message: DrdshChatSDKTest.shared.localizedString(stringKey:"FCM Auth Key can not be blank"), preferredStyle: UIAlertController.Style.alert)
-//          alert.addAction(UIAlertAction(title: DrdshChatSDKTest.shared.localizedString(stringKey:"Ok"), style: UIAlertAction.Style.default, handler: nil))
-//          DrdshChatSDKTest.shared.topViewController()?.present(alert, animated: true, completion: {
+//        }else if DrdshChatSDK.shared.config.FCM_Auth_Key == ""{
+//            let alert = UIAlertController(title: DrdshChatSDK.shared.localizedString(stringKey:"Error"), message: DrdshChatSDK.shared.localizedString(stringKey:"FCM Auth Key can not be blank"), preferredStyle: UIAlertController.Style.alert)
+//          alert.addAction(UIAlertAction(title: DrdshChatSDK.shared.localizedString(stringKey:"Ok"), style: UIAlertAction.Style.default, handler: nil))
+//          DrdshChatSDK.shared.topViewController()?.present(alert, animated: true, completion: {
 //             
 //          })
 //        }
         else{
-            let vc = UIStoryboard(name: "DrdshChatSDK", bundle: Bundle(for: DrdshChatSDKTest.self)).instantiateViewController(withIdentifier: "MainLoadViewController") as! MainLoadViewController
+            let vc = UIStoryboard(name: "DrdshChatSDK", bundle: Bundle(for: DrdshChatSDK.self)).instantiateViewController(withIdentifier: "MainLoadViewController") as! MainLoadViewController
             vc.modalPresentationStyle = .overFullScreen
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .overFullScreen
             if #available(iOS 13.0, *) {
                 let appearance = UINavigationBarAppearance()
                 appearance.configureWithDefaultBackground()
-                appearance.backgroundColor = DrdshChatSDKTest.shared.config.topBarBgColor.Color()
-                appearance.shadowColor = UIColor.clear
+                appearance.backgroundColor = DrdshChatSDK.shared.config.topBarBgColor.Color()
                 nav.navigationBar.standardAppearance = appearance;
                 nav.navigationBar.scrollEdgeAppearance = appearance;
                 nav.navigationBar.compactAppearance = appearance;
@@ -75,13 +74,13 @@ public class DrdshChatSDKTest : NSObject {
                 nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance
                // navigationBar.barStyle = UIBarStyle.default;
             }
-            DrdshChatSDKTest.shared.topViewController()?.present(nav, animated: true, completion: {
+            DrdshChatSDK.shared.topViewController()?.present(nav, animated: true, completion: {
                 completion?(true)
             })
         }
     }
     @objc public class func dismissChat(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
-        DrdshChatSDKTest.shared.topViewController()?.dismiss(animated: true, completion: {
+        DrdshChatSDK.shared.topViewController()?.dismiss(animated: true, completion: {
              completion?(true)
         })
     }
@@ -168,7 +167,7 @@ public class DrdshChatSDKConfiguration : GGObject {
     public var local:String = "en"
     var secondryColor:UIColor = UIColor.groupTableViewBackground
     public var bgColor:String  = ""
-    public var topBarBgColor:String  = ""
+    public var topBarBgColor:String  = "#FFFFFF"
     public var myChatBubbleColor:String  = "#EEEEEE"
     public var myChatTextColor:String  = "#000000"
     public var oppositeChatBubbleColor:String  = ""
@@ -253,8 +252,8 @@ public class DrdshChatSDKConfiguration : GGObject {
     public var watingMsg:String = "watingMsg"
     
     public override init() {
-        var bundle = Bundle(for: DrdshChatSDKTest.self)
-        if let resourcePath = bundle.path(forResource: "DrdshChatSDKTest", ofType: "bundle") {
+        var bundle = Bundle(for: DrdshChatSDK.self)
+        if let resourcePath = bundle.path(forResource: "DrdshChatSDK", ofType: "bundle") {
             if let resourcesBundle = Bundle(path: resourcePath) {
                 bundle = resourcesBundle
             }
@@ -337,6 +336,6 @@ extension String{
         return UIColor(hexString: self)
     }
     func Local()->String{
-        return DrdshChatSDKTest.shared.localizedString(stringKey:self)
+        return DrdshChatSDK.shared.localizedString(stringKey:self)
     }
 }

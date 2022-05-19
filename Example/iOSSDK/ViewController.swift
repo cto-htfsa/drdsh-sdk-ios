@@ -7,10 +7,12 @@
 //
 
 import UIKit
-import DrdshChatSDKTest
+import DrdshChatSDK
 
 
 class ViewController: UIViewController {
+    let appSid = ""
+    //"APPSID you will get it from https://www.drdsh.live/company/api-key."
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -21,10 +23,7 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        let sdkCongig = DrdshChatSDKConfiguration()
-//        sdkCongig.appSid = "5def86cf64be6d13f55f2034.5d96941bb5507599887b9c71829d5cffcdf55014"
-//        sdkCongig.local = "ar"
-//        DrdshChatSDKTest.presentChat(config: sdkCongig)
+
     }
     deinit {
         
@@ -32,46 +31,46 @@ class ViewController: UIViewController {
     @IBAction func btnStartENAction(_ sender:UIButton){
          UIView.appearance().semanticContentAttribute = .forceLeftToRight
        let sdkCongig = DrdshChatSDKConfiguration()
-       sdkCongig.appSid = "5def872764be6d13f55f203e.d3a138e76865367612af2c306bb38c1ce205939b"
+       sdkCongig.appSid = self.appSid
         sdkCongig.FCM_Token = AppDelegate.shared.token
         sdkCongig.FCM_Auth_Key = AppDelegate.shared.Auth_key
-       DrdshChatSDKTest.presentChat(config: sdkCongig)
+       DrdshChatSDK.presentChat(config: sdkCongig)
     }
     @IBAction func btnStartARAction(_ sender:UIButton){
          UIView.appearance().semanticContentAttribute = .forceRightToLeft
         let sdkCongig = DrdshChatSDKConfiguration()
-       sdkCongig.appSid = "5def86cf64be6d13f55f2034.5d96941bb5507599887b9c71829d5cffcdf55014"
+        sdkCongig.appSid = self.appSid
         sdkCongig.FCM_Token = AppDelegate.shared.token
         sdkCongig.FCM_Auth_Key = AppDelegate.shared.Auth_key
        sdkCongig.local = "ar"
-       DrdshChatSDKTest.presentChat(config: sdkCongig)
+       DrdshChatSDK.presentChat(config: sdkCongig)
     }
     @IBAction func btnStartWithEVIRIDEAction(_ sender:UIButton){
         UIView.appearance().semanticContentAttribute = .forceLeftToRight
         let sdkCongig = DrdshChatSDKConfiguration()
-        sdkCongig.appSid = "5def872764be6d13f55f203e.d3a138e76865367612af2c306bb38c1ce205939b"
+        sdkCongig.appSid = self.appSid
         sdkCongig.FCM_Token = AppDelegate.shared.token
         sdkCongig.FCM_Auth_Key = AppDelegate.shared.Auth_key
         sdkCongig.topBarBgColor = "#383033"
-        DrdshChatSDKTest.presentChat(config: sdkCongig)
+        DrdshChatSDK.presentChat(config: sdkCongig)
     }
     @IBAction func btnStartWithLogistiomAction(_ sender:UIButton){
         UIView.appearance().semanticContentAttribute = .forceLeftToRight
         let sdkCongig = DrdshChatSDKConfiguration()
-        sdkCongig.appSid = "5def86cf64be6d13f55f2034.5d96941bb5507599887b9c71829d5cffcdf55014"
+        sdkCongig.appSid = self.appSid
         sdkCongig.FCM_Token = AppDelegate.shared.token
         sdkCongig.FCM_Auth_Key = AppDelegate.shared.Auth_key
         sdkCongig.topBarBgColor = "#FA4D8F"
-        DrdshChatSDKTest.presentChat(config: sdkCongig)
+        DrdshChatSDK.presentChat(config: sdkCongig)
     }
     @IBAction func btnStartWithKilowatAction(_ sender:UIButton){
         UIView.appearance().semanticContentAttribute = .forceLeftToRight
         let sdkCongig = DrdshChatSDKConfiguration()
-        sdkCongig.appSid = "5def86cf64be6d13f55f2034.5d96941bb5507599887b9c71829d5cffcdf55014"
+        sdkCongig.appSid = self.appSid
         sdkCongig.FCM_Token = AppDelegate.shared.token
         sdkCongig.FCM_Auth_Key = AppDelegate.shared.Auth_key
         sdkCongig.topBarBgColor = "#255D9F"
-        DrdshChatSDKTest.presentChat(config: sdkCongig)
+        DrdshChatSDK.presentChat(config: sdkCongig)
     }
 }
 

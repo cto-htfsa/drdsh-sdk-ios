@@ -72,19 +72,19 @@ open class AGImagePickerController: NSObject {
     }
     
     private func setupAlertController() {
-        let alert = AGAlertBuilder(withActionSheet: DrdshChatSDKTest.shared.localizedString(stringKey:"chooseOption"), message: DrdshChatSDKTest.shared.localizedString(stringKey:"selectAnOptionToPickAnImage"), iPadOpen: .sourceView(iPadSetup))
+        let alert = AGAlertBuilder(withActionSheet: DrdshChatSDK.shared.localizedString(stringKey:"chooseOption"), message: DrdshChatSDK.shared.localizedString(stringKey:"selectAnOptionToPickAnImage"), iPadOpen: .sourceView(iPadSetup))
         
         if UIImagePickerController.availableCaptureModes(for: .rear) != nil {
-            alert.defaultAction(with: DrdshChatSDKTest.shared.localizedString(stringKey:"camera"), handler: { (alert) in
+            alert.defaultAction(with: DrdshChatSDK.shared.localizedString(stringKey:"camera"), handler: { (alert) in
                 self.presentPicker(with: .camera)
             })
         }
         
-        alert.defaultAction(with: DrdshChatSDKTest.shared.localizedString(stringKey:"photoLibrary")) { (alert) in
+        alert.defaultAction(with: DrdshChatSDK.shared.localizedString(stringKey:"photoLibrary")) { (alert) in
             self.presentPicker(with: .photoLibrary)
         }
         
-        alert.cancelAction(with: DrdshChatSDKTest.shared.localizedString(stringKey:"cancel"))
+        alert.cancelAction(with: DrdshChatSDK.shared.localizedString(stringKey:"cancel"))
         
         alert.show()
     }
@@ -95,7 +95,7 @@ open class AGImagePickerController: NSObject {
         }
         
         //no camera found -- alert the user.
-        AGAlertBuilder(withAlert: DrdshChatSDKTest.shared.localizedString(stringKey:"noCamera"), message: DrdshChatSDKTest.shared.localizedString(stringKey:"sorryThisDeviceHasNoCamera"))
+        AGAlertBuilder(withAlert: DrdshChatSDK.shared.localizedString(stringKey:"noCamera"), message: DrdshChatSDK.shared.localizedString(stringKey:"sorryThisDeviceHasNoCamera"))
             .defaultAction(with: "oK")
             .show()
         return false
@@ -169,12 +169,12 @@ class AGAlertBuilder: UIAlertController {
         if let time = delayTime {
             let dispatchTime = DispatchTime.now() + time
             DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
-                DrdshChatSDKTest.shared.topViewController()?.present(self, animated: animated, completion: completion)
+                DrdshChatSDK.shared.topViewController()?.present(self, animated: animated, completion: completion)
             }
         }
         else{
             DispatchQueue.main.async {
-                DrdshChatSDKTest.shared.topViewController()?.present(self, animated: animated, completion: completion)
+                DrdshChatSDK.shared.topViewController()?.present(self, animated: animated, completion: completion)
             }
         }
         
