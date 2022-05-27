@@ -11,7 +11,7 @@ import DrdshChatSDK
 
 
 class ViewController: UIViewController {
-    let appSid = ""
+    let appSid = "627d008a7205b7fe3f84503b.22f2e7fbb49bf08a3a89681867183dca51c700ff"
     //"APPSID you will get it from https://www.drdsh.live/company/api-key."
     override func viewDidLoad() {
         super.viewDidLoad()

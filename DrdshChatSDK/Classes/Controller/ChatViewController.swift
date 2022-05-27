@@ -36,10 +36,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.txtMessage.delegate = self
-        if #available(iOS 11.0, *) {
-            let window = UIApplication.shared.keyWindow
-            self.txtMessage.keyboardDistanceFromTextField = -((window?.safeAreaInsets.bottom ?? 00)-10)
-        }
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.disabledToolbarClasses = [ChatViewController.self]
