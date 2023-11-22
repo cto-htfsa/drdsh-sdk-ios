@@ -46,7 +46,7 @@ class MainLoadViewController: UIViewController {
             self.startChat()
         }
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white,.font : UIFont.init(name: "AvenirLTStd-Black", size: 17.0) ?? UIFont.boldSystemFont(ofSize: 17)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : DrdshChatSDK.shared.config.titleTextColor.Color(),.font : UIFont.boldSystemFont(ofSize: 17)]
         var backImage = DrdshChatSDK.shared.config.backImage
         if DrdshChatSDK.shared.config.local == "ar"{
             backImage = backImage.rotate(radians: .pi)

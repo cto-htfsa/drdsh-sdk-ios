@@ -177,7 +177,7 @@ HTF, cto@htf.sa
 
 ### Issues
 
-If you find an issue, please [create an issue](https://github.com/cto-htfsa/drdsh-sdk-ios).
+If you find an issue, please [create an issue](https://github.com/cto-htfsa/drdsh-sdk-ios/issue).
 
 
 

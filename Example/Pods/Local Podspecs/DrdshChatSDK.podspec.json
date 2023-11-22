@@ -1,6 +1,6 @@
 {
   "name": "DrdshChatSDK",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "summary": "To Build Excellent Customer Experience, Connect With DRDSH.",
   "description": "We have influential engagement products and potent customer service with flexibility and reliability for any business.",
   "homepage": "https://github.com/cto-htfsa/drdsh-sdk-ios",
@@ -13,10 +13,10 @@
   },
   "source": {
     "git": "https://github.com/cto-htfsa/drdsh-sdk-ios.git",
-    "tag": "1.0.0"
+    "tag": "1.0.2"
   },
   "platforms": {
-    "ios": "11.0"
+    "ios": "13.0"
   },
   "source_files": "DrdshChatSDK/Classes/**/*",
   "swift_versions": "4.0",

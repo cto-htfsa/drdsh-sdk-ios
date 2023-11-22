@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DrdshChatSDK'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'To Build Excellent Customer Experience, Connect With DRDSH.'
 
 # This description is used to generate tags and improve search results.
@@ -27,12 +27,12 @@ We have influential engagement products and potent customer service with flexibi
   s.author           = { 'htf' => 'cto@htf.sa' }
   s.source           = { :git => 'https://github.com/cto-htfsa/drdsh-sdk-ios.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '13.0'
 
   s.source_files = 'DrdshChatSDK/Classes/**/*'
   s.swift_version = '4.0'
   s.platforms = {
-      "ios":"11.0"
+      "ios":"13.0"
   }
   s.dependency 'SwiftyJSON', '~> 4.0'
   s.dependency 'MBProgressHUD'

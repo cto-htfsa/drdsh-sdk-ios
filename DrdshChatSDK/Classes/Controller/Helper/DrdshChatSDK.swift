@@ -66,6 +66,7 @@ public class DrdshChatSDK : NSObject {
                 let appearance = UINavigationBarAppearance()
                 appearance.configureWithDefaultBackground()
                 appearance.backgroundColor = DrdshChatSDK.shared.config.topBarBgColor.Color()
+                appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : DrdshChatSDK.shared.config.titleTextColor.Color(),.font : UIFont.boldSystemFont(ofSize: 17)]
                 nav.navigationBar.standardAppearance = appearance;
                 nav.navigationBar.scrollEdgeAppearance = appearance;
                 nav.navigationBar.compactAppearance = appearance;
@@ -167,6 +168,7 @@ public class DrdshChatSDKConfiguration : GGObject {
     public var local:String = "en"
     var secondryColor:UIColor = UIColor.groupTableViewBackground
     public var bgColor:String  = ""
+    public var titleTextColor:String  = "#FFFFFF"
     public var topBarBgColor:String  = "#FFFFFF"
     public var myChatBubbleColor:String  = "#EEEEEE"
     public var myChatTextColor:String  = "#000000"

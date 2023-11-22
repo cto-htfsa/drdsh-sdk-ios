@@ -8,14 +8,22 @@
 
 import UIKit
 import DrdshChatSDK
-
+import Firebase
 
 class ViewController: UIViewController {
-    let appSid = ""
+   // let appSid = "Put your appSid here"
+    let appSid = "655de9fc9df126ca3b9fdb2a.21c0fe2b038c35856b69410fd5460c32b048926a"
     //"APPSID you will get it from https://www.drdsh.live/company/api-key."
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        Messaging.messaging().token { token, error in
+            if let error = error {
+                print("Error fetching FCM registration token: \(error)")
+            } else if let token = token {
+                print("FCM registration token: \(token)")
+                AppDelegate.shared.token = token
+            }
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -25,9 +33,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
 
     }
-    deinit {
-        
-    }
+  
     @IBAction func btnStartENAction(_ sender:UIButton){
          UIView.appearance().semanticContentAttribute = .forceLeftToRight
        let sdkCongig = DrdshChatSDKConfiguration()
@@ -71,6 +77,9 @@ class ViewController: UIViewController {
         sdkCongig.FCM_Auth_Key = AppDelegate.shared.Auth_key
         sdkCongig.topBarBgColor = "#255D9F"
         DrdshChatSDK.presentChat(config: sdkCongig)
+    }
+    deinit {
+        
     }
 }
 
