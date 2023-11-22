@@ -54,7 +54,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         if DrdshChatSDK.shared.AllDetails.visitorConnectedStatus == 1{
             self.title = DrdshChatSDK.shared.config.waitingForAgent.Local()
             timer = Timer(timeInterval: TimeInterval(DrdshChatSDK.shared.AllDetails.embeddedChat.maxWaitTime), target: self, selector: #selector(invitationMaxWaitTimeExceeded), userInfo: nil, repeats: false)
-            RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
+            RunLoop.main.add(timer, forMode: .common)
         }
         
         CommonSocket.shared.CommanEmitSokect(command: .joinVisitorsRoom,data: [[
@@ -482,11 +482,11 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
          picker.dismiss(animated: true) {
-            if let image = (info[UIImagePickerControllerEditedImage] as? UIImage){
+             if let image = (info[UIImagePickerController.InfoKey.editedImage.rawValue] as? UIImage){
                  let imageName = "\(NSDate().timeIntervalSince1970 * 1000)"
                 let imagePath = self.getDocumentsDirectory().appendingPathComponent(imageName)
                 
-                if let jpegData = UIImageJPEGRepresentation(image, 0.5) {
+                 if let jpegData = image.jpegData(compressionQuality: 0.5) {
                        try? jpegData.write(to: imagePath)
                    }
                 if #available(iOS 11.0, *) {
