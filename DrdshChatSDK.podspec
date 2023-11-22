@@ -41,7 +41,8 @@ We have influential engagement products and potent customer service with flexibi
    s.resource_bundles = {
      'DrdshChatSDK' => ['DrdshChatSDK/Assets/**/*']
    }
-
+   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+     s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   # s.public_header_files = 'Pod/Classes/**/*.h'
    s.frameworks = 'UIKit'
 end
