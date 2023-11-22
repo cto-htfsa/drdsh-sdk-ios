@@ -12,7 +12,6 @@ import Firebase
 
 class ViewController: UIViewController {
    // let appSid = "Put your appSid here"
-    let appSid = "655de9fc9df126ca3b9fdb2a.21c0fe2b038c35856b69410fd5460c32b048926a"
     //"APPSID you will get it from https://www.drdsh.live/company/api-key."
     override func viewDidLoad() {
         super.viewDidLoad()
