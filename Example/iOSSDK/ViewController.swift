@@ -11,7 +11,7 @@ import DrdshChatSDK
 import Firebase
 
 class ViewController: UIViewController {
-   // let appSid = "Put your appSid here"
+    let appSid = "Put your appSid here"
     //"APPSID you will get it from https://www.drdsh.live/company/api-key."
     override func viewDidLoad() {
         super.viewDidLoad()
