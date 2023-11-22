@@ -30,7 +30,7 @@ We have influential engagement products and potent customer service with flexibi
   s.ios.deployment_target = '13.0'
 
   s.source_files = 'DrdshChatSDK/Classes/**/*'
-  s.swift_version = '5.0'
+  s.swift_version = '4.0'
   s.platforms = {
       "ios":"13.0"
   }
