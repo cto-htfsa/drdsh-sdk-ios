@@ -41,14 +41,10 @@ We have influential engagement products and potent customer service with flexibi
    }
 #   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'IPHONEOS_DEPLOYMENT_TARGET' => '13.0' }
 #   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64','IPHONEOS_DEPLOYMENT_TARGET' => '13.0' }
-   s.pod_target_xcconfig = {
-   'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 armv7 arm64',
-   'VALID_ARCHS' => 'x86_64 armv7 arm64',
-   }
-   s.user_target_xcconfig = {
-   'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 armv7 arm64',
-   'VALID_ARCHS' => 'x86_64 armv7 arm64',
-   }
+   s.subspec "Crash" do |crash|
+      crash.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
+      crash.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
+  end
   # s.public_header_files = 'Pod/Classes/**/*.h'
    s.frameworks = 'UIKit'
 end
