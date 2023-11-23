@@ -27,13 +27,11 @@ We have influential engagement products and potent customer service with flexibi
   s.author           = { 'htf' => 'cto@htf.sa' }
   s.source           = { :git => 'https://github.com/cto-htfsa/drdsh-sdk-ios.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = "13.0"
 
   s.source_files = 'DrdshChatSDK/Classes/**/*'
-  s.swift_version = '4.0'
-  s.platforms = {
-      "ios":"13.0"
-  }
+  s.swift_version = "4.0"
+  s.platform     = :ios, "13.0"
   s.dependency 'SwiftyJSON', '~> 4.0'
   s.dependency 'MBProgressHUD'
   s.dependency 'IQKeyboardManagerSwift', '6.2.1'
@@ -41,10 +39,16 @@ We have influential engagement products and potent customer service with flexibi
    s.resource_bundles = {
      'DrdshChatSDK' => ['DrdshChatSDK/Assets/**/*']
    }
-   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-     s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-     s.pod_target_xcconfig = { 'IPHONEOS_DEPLOYMENT_TARGET' => '13.0' }
-     s.user_target_xcconfig = { 'IPHONEOS_DEPLOYMENT_TARGET' => '13.0' }
+#   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'IPHONEOS_DEPLOYMENT_TARGET' => '13.0' }
+#   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64','IPHONEOS_DEPLOYMENT_TARGET' => '13.0' }
+   s.pod_target_xcconfig = {
+   'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 armv7 arm64',
+   'VALID_ARCHS' => 'x86_64 armv7 arm64',
+   }
+   s.user_target_xcconfig = {
+   'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 armv7 arm64',
+   'VALID_ARCHS' => 'x86_64 armv7 arm64',
+   }
   # s.public_header_files = 'Pod/Classes/**/*.h'
    s.frameworks = 'UIKit'
 end
